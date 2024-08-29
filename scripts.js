@@ -119,6 +119,7 @@ const GameController = (() => {
             GameBoard.placeMarker(getCurrentPlayer().getMarker(),index);
             DisplayLogic.drawGameBoard();
             console.log(getCurrentPlayer().getName());
+            round++; // a bit hacky but works since need to switch the players to get correct winner in checkWinner, refactor and fix this later if you have time 
             checkWinner();
             if (checkWinner() == false){ // a bit hacky but works
                 DisplayLogic.displayWinner("tie");
