@@ -197,14 +197,21 @@ header{
 @media (max-width: 600px) {
   #VS {
       position: absolute;
-      bottom: 10%; /* Move it down */
+      bottom: 15%; /* Move it down */
       left: 50%;
       justify-content: space-between;
       transform: translateX(-50%);
       width: auto; 
   }
-  #player-one-input-section, #player-two-input-section {
-    margin-top: -20px; /* Move input sections up */
+  #player-one-input-section {
+    position: absolute;
+    top: 20%;
+    left:10%;
+}
+#player-two-input-section {
+  position: absolute;
+  top: 20%;
+  right: 10%;
 }
 }
 
