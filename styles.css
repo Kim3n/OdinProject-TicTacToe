@@ -1,0 +1,289 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+body{
+    font-family: 'Edo SZ', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    color: white;
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #450001;
+    z-index: 998;
+    box-shadow: 0 6px 10px 5px rgba(0,0,0,0.5);
+  }
+
+  h1{
+    font-size: 48px;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black,
+    1px 1px 0 black;
+  }
+  h2{
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black,
+    1px 1px 0 black;
+  }
+
+  a{
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black,
+    1px 1px 0 black;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color:  #8d0005
+
+  }
+
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background-color: #450001;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+  }
+
+  .container{
+    justify-self: flex-start;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    align-items: center;
+    
+    background-image: url(img/f79.png);
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+
+
+
+
+  .game_board{
+    animation: vibrate-1 0.3s linear;
+  }
+
+  .game_board{
+    z-index: 2;
+    padding-top: 1rem;
+    display: grid;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    gap: 1em;
+    align-items: center;
+    grid-template: repeat(3, minmax(50px, 1fr)) / repeat(3, minmax(50px, 10vw));
+    /*border: solid black 1px;*/
+
+  }
+
+  .marker_cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(50px, 15vw, 100px);
+    text-align: center;
+    border: solid black 2px;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+  }
+
+  .markers{
+    animation: puff-in-center 0.2s linear;
+  }
+
+  #play-button {
+  position: relative;
+  top: 40%;
+  }
+
+.yak-button {
+
+  width: 200px;
+  height: 100px;
+  background-color: #450001;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Edo SZ', sans-serif;  font-size: .875rem;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black, 1px 1px 0 black;
+  text-align: center;
+  box-shadow: 0px 6px 10px 5px rgba(0,0,0,0.5);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  z-index: 3;
+}
+
+.yak-button:hover {
+  background-color: #8c0005
+}
+
+
+.players-container {
+  
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1;
+  text-align: center;
+}
+#player-one, #player-two {
+  width: 20%;
+}
+
+#player-one-input-section, #player-two-input-section{
+  display: flex;
+    width: 20%;
+    flex-direction: column;
+}
+
+#player-one img, #player-two img {
+  width: 100%;
+  height: auto; 
+}
+
+
+.modal {
+  display: flex;
+  position: fixed; 
+  justify-content: center;
+  z-index: 999; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.4);
+
+
+}
+
+#VS{
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: slide-in-top 0.3s linear;
+}
+@media (max-width: 600px) {
+  #VS {
+      position: absolute;
+      bottom: 10%; /* Move it down */
+      left: 50%;
+      justify-content: space-between;
+      transform: translateX(-50%);
+      width: auto; 
+  }
+  #player-one-input-section, #player-two-input-section {
+    margin-top: -20px; /* Move input sections up */
+}
+}
+
+#player-two-input-section{
+  max-width: 300px;
+  margin: 10px;
+  animation: slide-in-right 0.3s linear;
+}
+#player-one-input-section{
+  max-width: 300px;
+  margin: 10px;
+  animation: slide-in-left 0.3s linear;
+}
+
+
+#VS h1{
+  font-size: clamp(60px, 10vw, 120px);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black,
+  1px 1px 0 black;
+}
+
+.players-name-input-form{
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.players-name-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+  text-align: center;
+}
+
+.player-name-input{
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+  align-self: center;
+}
+
+input{
+  border: 3px solid #111827;
+  padding: 1rem;
+  font-family: 'Edo SZ', sans-serif;  font-size: .875rem;
+  font-size: 25px;
+  border-radius: 8px;
+  color: #111827;
+}
+
+.shake{
+  animation: bounce-top 0.3s linear;
+}
+
+#winner-container{
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  background-image: url(img/splash.png);
+  background-repeat: no-repeat;
+  background-position: 0%;
+  background-size: 100%;
+  background-position-x: center;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-8-29 20:2:7
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+ @-webkit-keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+ @-webkit-keyframes puff-in-center{0%{-webkit-transform:scale(2);transform:scale(2);-webkit-filter:blur(4px);filter:blur(4px);opacity:0}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes puff-in-center{0%{-webkit-transform:scale(2);transform:scale(2);-webkit-filter:blur(4px);filter:blur(4px);opacity:0}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+ @-webkit-keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}@keyframes vibrate-1{0%{-webkit-transform:translate(0);transform:translate(0)}20%{-webkit-transform:translate(-2px,2px);transform:translate(-2px,2px)}40%{-webkit-transform:translate(-2px,-2px);transform:translate(-2px,-2px)}60%{-webkit-transform:translate(2px,2px);transform:translate(2px,2px)}80%{-webkit-transform:translate(2px,-2px);transform:translate(2px,-2px)}100%{-webkit-transform:translate(0);transform:translate(0)}}
+ @-webkit-keyframes bounce-top{0%{-webkit-transform:translateY(-45px);transform:translateY(-45px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{-webkit-transform:translateY(-24px);transform:translateY(-24px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}65%{-webkit-transform:translateY(-12px);transform:translateY(-12px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}82%{-webkit-transform:translateY(-6px);transform:translateY(-6px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}93%{-webkit-transform:translateY(-4px);transform:translateY(-4px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}25%,55%,75%,87%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}}@keyframes bounce-top{0%{-webkit-transform:translateY(-45px);transform:translateY(-45px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{-webkit-transform:translateY(-24px);transform:translateY(-24px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}65%{-webkit-transform:translateY(-12px);transform:translateY(-12px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}82%{-webkit-transform:translateY(-6px);transform:translateY(-6px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}93%{-webkit-transform:translateY(-4px);transform:translateY(-4px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}25%,55%,75%,87%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}}
+ @-webkit-keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+ @-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+ @-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}

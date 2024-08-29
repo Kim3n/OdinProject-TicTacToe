@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/edo-sz" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+                
+</head>
+<body>
+    <header>
+        <h1>TIC TAC TOE</h1>
+    </header>
+
+
+
+    <div class="container" >
+        <button class="yak-button" id="play-button" onclick="DisplayLogic.playerNameChoice()">PLAY</button>
+        <div id="player-turn-counter"></div>
+        <div class="game_board" id="game_board"></div>
+
+        <div class="players-container">
+            <div class="players" id="player-one" hidden>
+                <img src="img/Kazuma_Kiryu_29.webp" id="player-one-image">
+                <h2 id="player-one-name">Kiryu Kazuma</h2>
+            </div>
+            <div class="players" id="player-two" hidden>
+                <img src="img/Goro_Majima_29.webp" id="player-two-image">
+                <h2 id="player-two-name">Goro Majima</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="players-name-input" class="modal" style="display:none">
+            <form class="players-name-input-form" id="myForm">
+                <div class="players-name-form">
+                    <div id="player-one-input-section">
+                        <img src="img/Kazuma_Kiryu_29.webp" id="player-one-image">
+                        <h2 id="player-one-name">Enter Player 1 Name</h2>
+                        <input type="text" class="player-name-input" id="player-one-name-input" placeholder="Kiryu Kazuma" required>
+                    </div>
+                    <div id="VS">
+                        <h1>VS</h1>
+                        <button type="submit" class="yak-button" id="submit" >SUBMIT</button>
+                    </div>
+                    
+                    <div id="player-two-input-section">
+                        <img src="img/Goro_Majima_29.webp" id="player-two-image">
+                        <h2 id="player-two-name">Enter Player 2 Name</h2>
+                        <input type="text" class="player-name-input" id="player-two-name-input" placeholder="Goro Majima" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+      
+        <div id="players-winner" class="modal" style="display:none">
+            <div id="winner-container">
+                <div id="winner-container-name">
+
+                </div>
+                
+            <button class="yak-button" onclick="GameController.restartGame()" >RESTART</button>
+            </div>
+        </div>
+      
+    
+
+    
+    <footer><a href="https://github.com/Kim3n"><h4>Made by Kim3n</h4></a></footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
